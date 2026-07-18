@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AH Electronics | Premium Mobile Solutions</title>
+    
+    <!-- SEO & Meta -->
+    <meta name="description" content="AH Electronics - Premium Mobile Store in Rourkela. Buy, Sell, Exchange, and Finance.">
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg: #050505;
+            --accent-blue: #00d2ff;
+            --accent-purple: #764ba2;
+            --accent-cyan: #00fff2;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --text: #ffffff;
+            --text-dim: rgba(255, 255, 255, 0.5);
+            --fluid-speed: 20s;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+            cursor: default;
+        }
+
+        /* --- FLUID ANIMATED BACKGROUND --- */
+        .fluid-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            filter: blur(80px);
+            opacity: 0.6;
+            pointer-events: none;
+            background: #050505;
+        }
+
+        .fluid-blob {
+            position: absolute;
+            border-radius: 50%;
+            mix-blend-mode: screen;
+            animation: fluidMovement var(--fluid-speed) infinite alternate ease-in-out;
+        }
+
+        .blob-1 {
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, var(--accent-blue) 0%, transparent 70%);
+            top: -10%; left: -10%;
+        }
+
+        .blob-2 {
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, var(--accent-purple) 0%, transparent 70%);
+            bottom: -10%; right: -10%;
+            animation-duration: 25s;
+        }
+
+        .blob-3 {
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, var(--accent-cyan) 0%, transparent 70%);
+            top: 40%; left: 30%;
+            animation-duration: 15s;
+            animation-delay: -5s;
+        }
+
+        @keyframes fluidMovement {
+            0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+            33% { transform: translate(100px, 50px) scale(1.2) rotate(120deg); }
+            66% { transform: translate(-50px, 150px) scale(0.8) rotate(240deg); }
+            100% { transform: translate(40px, -20px) scale(1.1) rotate(360deg); }
+        }
+
+        .top-quote {
+            text-align: center;
+            padding: 25px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: var(--accent-cyan);
+            font-weight: 700;
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        /* --- LOGO SECTION --- */
+        .logo-container {
+            width: 200px;
+            height: 200px;
+            margin: 50px auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .logo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 0 30px rgba(0, 210, 255, 0.4));
+            animation: logoFloat 4s infinite alternate ease-in-out;
+        }
+
+        @keyframes logoFloat {
+            from { transform: translateY(0) scale(1); filter: drop-shadow(0 0 20px rgba(0, 210, 255, 0.3)); }
+            to { transform: translateY(-15px) scale(1.05); filter: drop-shadow(0 0 45px rgba(0, 210, 255, 0.6)); }
+        }
+
+        /* --- HERO --- */
+        .hero { text-align: center; padding: 20px; position: relative; }
+
+        .title {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: clamp(3rem, 10vw, 6rem);
+            font-weight: 800;
+            letter-spacing: -3px;
+            background: linear-gradient(90deg, #fff, var(--accent-blue), var(--accent-purple), #fff);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 6s linear infinite;
+        }
+
+        @keyframes shine { to { background-position: 200% center; } }
+
+        .tagline {
+            font-size: 1.1rem;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: var(--text-dim);
+            margin: 15px 0 40px;
+            font-weight: 400;
+        }
+
+        /* --- GLASS CARDS --- */
+        .container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
+
+        .section-header {
+            font-size: 1.6rem;
+            font-weight: 800;
+            margin: 80px 0 40px;
+            padding-left: 20px;
+            border-left: 5px solid var(--accent-blue);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--glass);
+            backdrop-filter: blur(30px) saturate(150%);
+            -webkit-backdrop-filter: blur(30px) saturate(150%);
+            border: 1px solid var(--glass-border);
+            border-radius: 32px;
+            padding: 45px;
+            text-decoration: none;
+            color: inherit;
+            position: relative;
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 50%);
+            opacity: 0;
+            transition: 0.6s;
+            pointer-events: none;
+        }
+
+        .card:hover {
+            transform: translateY(-15px) scale(1.02);
+            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+        }
+
+        .card:hover::before { opacity: 1; transform: translate(10%, 10%); }
+
+        .card i.main-icon {
+            font-size: 2.8rem;
+            margin-bottom: 25px;
+            display: block;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .card h3 { font-size: 1.6rem; margin-bottom: 12px; font-weight: 700; letter-spacing: -0.5px; }
+        .card p { color: var(--text-dim); font-size: 0.95rem; line-height: 1.6; }
+
+        .card .arrow {
+            position: absolute; right: 40px; bottom: 40px;
+            font-size: 1.2rem;
+            opacity: 0; transform: translateX(-15px); transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .card:hover .arrow { opacity: 1; transform: translateX(0); }
+
+        /* --- FOOTER CONTACT SECTION --- */
+        .footer-contact {
+            margin: 40px auto;
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 30px;
+            backdrop-filter: blur(20px);
+        }
+
+        .contact-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .contact-row:last-child { border-bottom: none; }
+
+        .contact-label {
+            font-weight: 600;
+            color: var(--accent-cyan);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-number {
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: 0.3s;
+        }
+
+        .contact-number:hover {
+            color: var(--accent-blue);
+            text-shadow: 0 0 10px rgba(0, 210, 255, 0.5);
+        }
+
+        .reveal { opacity: 0; transform: translateY(40px); transition: 1s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        footer {
+            padding: 80px 20px; text-align: center;
+            border-top: 1px solid var(--glass-border);
+            margin-top: 60px;
+            background: rgba(255,255,255,0.01);
+        }
+
+        @media (max-width: 768px) { 
+            .title { font-size: 3.5rem; }
+            .grid { grid-template-columns: 1fr; }
+            .contact-row { flex-direction: column; gap: 8px; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="fluid-bg">
+        <div class="fluid-blob blob-1"></div>
+        <div class="fluid-blob blob-2"></div>
+        <div class="fluid-blob blob-3"></div>
+    </div>
+
+    <div class="top-quote">"Excellence in every connection, quality in every hand."</div>
+
+    <section class="hero">
+        <div class="logo-container">
+            <img src="logo.png" alt="AH Electronics Logo" class="logo-img">
+        </div>
+        <h1 class="title">AH Electronics</h1>
+        <p class="tagline">Buy • Sell • Exchange • Finance</p>
+    </section>
+
+    <div class="container">
+        <div class="grid">
+            <a href="https://www.instagram.com/ahelectronics.rkl" target="_blank" class="card reveal">
+                <i class="fa-brands fa-instagram main-icon"></i>
+                <h3>Instagram</h3>
+                <p>Follow us for the latest phone arrivals, unboxings, and exclusive daily deals.</p>
+                <i class="fa-solid fa-arrow-right arrow"></i>
+            </a>
+
+            <a href="https://wa.me/919348725845" target="_blank" class="card reveal">
+                <i class="fa-brands fa-whatsapp main-icon" style="color:#25D366; -webkit-text-fill-color:#25D366;"></i>
+                <h3>WhatsApp</h3>
+                <p>Instant support. Chat with our experts for pricing and stock availability.</p>
+                <i class="fa-solid fa-arrow-right arrow"></i>
+            </a>
+
+            <a href="https://maps.app.goo.gl/XUc3mkHGDvKXkEQU6" target="_blank" class="card reveal">
+                <i class="fa-solid fa-location-dot main-icon" style="color:#ea4335; -webkit-text-fill-color:#ea4335;"></i>
+                <h3>Visit Store</h3>
+                <p>Located in Rourkela, Odisha. Experience premium gadgets hands-on.</p>
+                <i class="fa-solid fa-arrow-right arrow"></i>
+            </a>
+
+            <a href="https://youtube.com/@ahelectronic_vlogs" target="_blank" class="card reveal">
+                <i class="fa-brands fa-youtube main-icon" style="color:#ff0000; -webkit-text-fill-color:#ff0000;"></i>
+                <h3>YouTube</h3>
+                <p>Watch detailed tech reviews, shop vlogs, and customer experiences.</p>
+                <i class="fa-solid fa-arrow-right arrow"></i>
+            </a>
+
+            <a href="tel:+919348725845" class="card reveal">
+                <i class="fa-solid fa-phone-volume main-icon"></i>
+                <h3>Call Now</h3>
+                <p>Have a question? Give us a call for direct assistance and quick solutions.</p>
+                <i class="fa-solid fa-arrow-right arrow"></i>
+            </a>
+
+            <a href="https://www.facebook.com/share/1BUpA2hiuQ/" target="_blank" class="card reveal">
+                <i class="fa-brands fa-facebook main-icon" style="color:#1877f2; -webkit-text-fill-color:#1877f2;"></i>
+                <h3>Facebook</h3>
+                <p>Join our community and stay updated with local offers and events.</p>
+                <i class="fa-solid fa-arrow-right arrow"></i>
+            </a>
+
+            <a href="https://g.page/r/CTqcccmXvi48ECY/review" target="_blank" class="card reveal" style="border-color: rgba(255, 185, 0, 0.2);">
+                <i class="fa-solid fa-star main-icon" style="color:#FFB900; -webkit-text-fill-color:#FFB900;"></i>
+                <h3>Google Rating</h3>
+                <p>We take pride in our service. Check our 5-star reviews from verified customers.</p>
+                <i class="fa-solid fa-arrow-right arrow"></i>
+            </a>
+        </div>
+
+        <h2 class="section-header reveal">Our Other Branches</h2>
+        
+        <div class="grid">
+            <a href="https://www.instagram.com/ahelectronic2.0?igsh=MWZydGl0NThndHcwbw==" target="_blank" class="card reveal" style="background: rgba(0, 210, 255, 0.05); border-color: rgba(0, 210, 255, 0.2);">
+                <i class="fa-solid fa-store main-icon" style="color:var(--accent-cyan); -webkit-text-fill-color:var(--accent-cyan);"></i>
+                <h3>AH Electronics 2.0</h3>
+                <p>Visit our flagship expansion for premium boutique mobile services and accessories.</p>
+                <i class="fa-solid fa-arrow-right arrow"></i>
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="reveal">
+            <h3 style="margin-bottom: 25px; font-weight: 800; letter-spacing: 2px;">AH ELECTRONICS</h3>
+            <p style="color: var(--text-dim); margin-bottom: 20px;">📍 Rourkela, Odisha</p>
+            
+            <!-- Dual Contact Section -->
+            <div class="footer-contact">
+                <div class="contact-row">
+                    <span class="contact-label">Contact AH Electronics</span>
+                    <a href="tel:+919348725845" class="contact-number">+91 93487 25845</a>
+                </div>
+                <div class="contact-row">
+                    <span class="contact-label">Contact AH Electronics 2.0</span>
+                    <a href="tel:+917750092480" class="contact-number">+91 77500 92480</a>
+                </div>
+            </div>
+
+            <p style="font-size: 0.8rem; opacity: 0.4; margin-top: 50px;">© 2021 AH Electronics. All Rights Reserved. ❤️</p>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            document.querySelectorAll('.fluid-blob').forEach((blob, index) => {
+                const shift = (index + 1) * 20;
+                blob.style.transform = `translate(${x * shift}px, ${y * shift}px)`;
+            });
+        });
+    </script>
+</body>
+</html>
